@@ -54,6 +54,7 @@ class HomePage extends StatelessWidget {
           return Row(
             mainAxisSize: MainAxisSize.max,
             children: [
+              /*
               DButton(
                 onTap: () => launchUrl(Uri.parse('https://github.com'
                     '/Nialixus'
@@ -83,6 +84,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+              */
               const Spacer(),
               FloatingActionButton(
                 shape: const CircleBorder(),
@@ -116,53 +118,47 @@ class HomePage extends StatelessWidget {
           // HomeStarter Section: Introduction
           HomeStarter(
             id: item.id,
-            title: "Explore Key Features or Benefits",
+            title: "A Chapa da categoria Vote 52 Vote 101",
             subtitle:
-                "We've Solved Problem with Your Solution - Making Your Life Easier. Get Ready for Our Upcoming Launch - Something Amazing Awaits. Stay Informed.",
+                "Somos técnicos atuantes há décadas e com muita luta\nconseguimos a criação do CRT-07(PA/AP)\n garantindo autonomia para nossa região.\nVOTE 5️⃣2️⃣💪🏽VOTE 1️⃣0️⃣1️⃣💪🏽",
           ),
 
           // HomeFeatures Section: Key Features
           HomeFeatures(
             id: item.id,
-            title: 'Key Features',
+            title: 'Os Candidatos',
             subtitle:
-                'Explore Why Our Product is the Ideal Solution for Your Needs',
+                'Conheça os candidatos que estão concorrendo a diretoria executiva CRT-07 e o conselheiro federal pelo Pará.',
             cards: const [
               CardModel(
-                source: 'assets/image/icon_inactive_faq.svg',
-                title: "Discover the World's Wonders",
-                subtitle:
-                    'Embark on a mesmerizing journey to breathtaking destinations and uncover the hidden gems that make our planet truly extraordinary. 🚀',
+                source: 'assets/image/ana-paula-fonseca.png',
+                title: "Presidente: Ana Paula Fonseca",
+                subtitle: 'Técnica em Telecomunicações pelo IFPA com mais de 25 anos de experiência nos setores público e privado. Como agente de fiscalização concursada, defende uma fiscalização orientadora em vez de punitiva.',
               ),
               CardModel(
-                source: 'assets/image/icon_inactive_features.svg',
-                title: 'Unleash Your Creativity',
-                subtitle:
-                    'Ignite your creative spark and let your imagination run wild with our vast collection of inspiring content, designed to fuel your artistic passions. 🎨',
+                source: 'assets/image/jefferson_oliveira.png', // ← Foto do Jefferson
+                title: 'Vice-Presidente: Jefferson Oliveira',
+                subtitle: 'Técnico em Eletrônica e especialista em energia solar. Com experiência na Embratel e ETEMB, defende a qualificação e o registro profissional para valorização e segurança da categoria.',
               ),
               CardModel(
-                source: 'assets/image/icon_inactive_pricing.svg',
-                title: 'Elevate Your Taste Buds',
-                subtitle:
-                    'Indulge in a delectable culinary journey that tantalizes your palate, as we guide you through a world of flavors and culinary adventures. 🍰',
+                source: 'assets/image/francisco_silva_santos.png', // ← Foto do Francisco
+                title: 'Diretor Administrativo: Francisco Silva Santos',
+                subtitle: 'Técnico em Edificações (IFPA/1975), participou de obras como Mangueirão e Marco Zero. Atua na defesa do reconhecimento dos técnicos industriais no Norte.',
               ),
               CardModel(
-                source: 'assets/image/icon_inactive_faq.svg',
-                title: 'Master Your Fitness Journey',
-                subtitle:
-                    'Take control of your health and wellness goals with our expert guidance, tailored workouts, and nutrition tips to help you achieve the best version of yourself. 🏸',
+                source: 'assets/image/arivaldo_lieuthier.png', // ← Foto do Arivaldo
+                title: 'Diretor Financeiro: Arivaldo Lieuthier',
+                subtitle: 'Técnico em Telecomunicações desde 1978. Paraense, articulou a separação da Região Norte e lutou contra a privatização da Telebrás, defendendo o fortalecimento da categoria há décadas.',
               ),
               CardModel(
-                source: 'assets/image/icon_inactive_features.svg',
-                title: 'Unlock Adventure Awaits',
-                subtitle:
-                    'Embark on thrilling adventures and create unforgettable moments as we guide you through an exciting world of experiences, from adrenaline-pumping escapades to serene getaways. 🏔',
+                source: 'assets/image/jose_maria_melo.png', // ← Foto do José Maria
+                title: 'Diretor de Fiscalização e normas: José Maria Melo',
+                subtitle: 'Técnico com 34 anos de experiência em eletrônica e telecomunicações (Amazônia/Chile). Agente do CRT-02, foca em fiscalização orientadora e valorização da categoria.',
               ),
               CardModel(
-                source: 'assets/image/icon_inactive_pricing.svg',
-                title: 'Stay Informed and Inspired',
-                subtitle:
-                    'Get the latest news, insights, and motivation from our team of experts and thought leaders. Stay informed, stay inspired, and stay ahead of the curve. 🗞',
+                source: 'assets/image/abelardo_lopes_de_sousa.png', // ← Foto do Abelardo
+                title: 'Conselheiro Federal: Abelardo Lopes De Sousa',
+                subtitle: 'Arquiteto do desmembramento da Região Norte e criação do CRT-07. Defende a valorização dos técnicos industriais e a autonomia do conselho para melhor atender a categoria.',
               ),
             ],
           ),
@@ -170,31 +166,24 @@ class HomePage extends StatelessWidget {
           // HomePricing Section: Pricing Plans
           HomePricing(
             id: item.id,
-            title: 'Choose the Perfect Plan',
+            title: 'Queremos te escutar',
             subtitle:
-                'Explore the benefits and features of each plan to make the right choice for your business.',
+                'Sua proposta virou nosso compromisso, aponte o rumo e desenhe a solução.',
             plans: const [
               // HomePricingModel items representing pricing plans
               HomePricingModel(
-                title: 'Basic Plan',
+                title: 'Digite sua proposta',
                 price: 0,
                 benefits:
-                    "Affordable pricing for individuals and small businesses.\nEssential features to get started quickly.\n24/7 customer support for any assistance you need.",
+                    "Contamos com a sua voz. Ela é o PRUMO da nossa gestão..\nVocê é o motor da nossa candidatura.\nJuntos, vamos escrever o próximo capítulo da nossa categoria..",
                 type: HomePricingType.forever,
               ),
               HomePricingModel(
-                title: 'Pro Plan',
+                title: 'Visite nosso instagram',
                 price: 15,
                 benefits:
-                    "Ideal for growing businesses looking for advanced features.\nEnhanced performance and scalability.\nPriority support and access to premium resources.",
+                    "Conheça nossa equipe.\nVeja nossa história.\nSinta a nossa paixão pela categoria.",
                 type: HomePricingType.month,
-              ),
-              HomePricingModel(
-                title: 'Premium Plan',
-                price: 120,
-                benefits:
-                    "Experience the ultimate package with exclusive features.\nAdvanced tools and customizations for your business.\nDedicated account manager for personalized assistance.",
-                type: HomePricingType.year,
               ),
             ],
           ),
@@ -202,46 +191,34 @@ class HomePage extends StatelessWidget {
           // HomeFAQ Section: Frequently Asked Questions
           HomeFAQ(
             id: item.id,
-            title: 'Frequently Asked Questions',
-            subtitle: 'Answers to Common Inquiries Regarding Payment Options',
+            title: ' PROPOSTAS QUE JÁ ESTÃO NO PLANO. FEITAS POR QUEM VIVE A PROFISSÃO.',
+            subtitle: 'Juntos, vamos escrever o próximo capítulo da nossa categoria.',
             cards: const [
               // CardModel items representing frequently asked questions
               CardModel(
                 source: 'assets/image/icon_inactive_faq.svg',
-                title: "🚀 Discover the World's Wonders",
+                title: "Proposta 1: Redução de Taxas e Impostos",
                 subtitle:
-                    'Embark on a mesmerizing journey to breathtaking destinations and uncover the hidden gems that make our planet truly extraordinary.',
+                    'Parceria com governo federal/estado/municípios para diminuir taxas ou impostos de empresas registradas no Conselho.',
               ),
               CardModel(
                 source: 'assets/image/icon_inactive_features.svg',
-                title: '🎨 Unleash Your Creativity',
+                title: 'Proposta 2: Valorização Profissional',
                 subtitle:
-                    'Ignite your creative spark and let your imagination run wild with our vast collection of inspiring content, designed to fuel your artistic passions.',
+                    'Plataforma digital oficial do CRT para profissionais registrados, aonde esses poderão criar perfis e oferecer serviços, conectando diretamente o cliente e o técnico e combatendo profissionais irregulares/sem registro e assim valorizando o profissional regular.',
               ),
               CardModel(
                 source: 'assets/image/icon_inactive_pricing.svg',
-                title: '🍰 Elevate Your Taste Buds',
+                title: 'Proposta 3: Agilidade e Rapidez.',
                 subtitle:
-                    'Indulge in a delectable culinary journey that tantalizes your palate, as we guide you through a world of flavors and culinary adventures.',
+                    'Mais agilidade e rapidez nas emissões dos TRTs.',
               ),
               CardModel(
                 source: 'assets/image/icon_inactive_faq.svg',
-                title: '🏸 Master Your Fitness Journey',
+                title: 'Proposta 4: Convênios e Benefícios',
                 subtitle:
-                    'Take control of your health and wellness goals with our expert guidance, tailored workouts, and nutrition tips to help you achieve the best version of yourself.',
-              ),
-              CardModel(
-                source: 'assets/image/icon_inactive_features.svg',
-                title: '🏔 Unlock Adventure Awaits',
-                subtitle:
-                    'Embark on thrilling adventures and create unforgettable moments as we guide you through an exciting world of experiences, from adrenaline-pumping escapades to serene getaways.',
-              ),
-              CardModel(
-                source: 'assets/image/icon_inactive_pricing.svg',
-                title: '🗞 Stay Informed and Inspired',
-                subtitle:
-                    'Get the latest news, insights, and motivation from our team of experts and thought leaders. Stay informed, stay inspired, and stay ahead of the curve.',
-              ),
+                    'Benefícios para os técnicos como: convênio, assistência médicas para fazer jus a anuidade..',
+              ),   
             ],
           ),
         ][index]);

@@ -16,7 +16,7 @@ void main() {
         return SeoController(
           tree: WidgetTree(context: context),
           child: MaterialApp.router(
-            title: 'Flutter Landing Page',
+            title: 'Chapa 52 - Chapa 101',
             routerConfig: Env.routes,
             theme: Constants.lightTheme,
             debugShowCheckedModeBanner: false,

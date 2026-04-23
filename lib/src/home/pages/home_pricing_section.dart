@@ -165,7 +165,7 @@ class HomePricing extends StatelessWidget {
             margin: const EdgeInsets.only(right: Constants.spacing),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Constants.spacing),
-              color: context.color.background,
+              color: context.color.surface,
             ),
             child: MergeSemantics(
               child: Column(
@@ -179,69 +179,14 @@ class HomePricing extends StatelessWidget {
                       item.title,
                       semanticsLabel: item.title,
                       style: context.text.titleMedium?.copyWith(
-                        color: context.color.onBackground,
+                        color: context.color.onSurface,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
 
                   // Display pricing label
-                  Padding(
-                    padding: const EdgeInsets.all(Constants.spacing * 2.0),
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          // Display price currency
-                          Seo.text(
-                            text: '\$',
-                            style: TextTagStyle.h4,
-                            child: Text(
-                              '\$',
-                              semanticsLabel: 'USD',
-                              style: context.text.bodyMedium?.copyWith(
-                                color: context.color.onBackground,
-                                fontSize: 20.0,
-                              ),
-                            ),
-                          ),
-
-                          // Display the price
-                          Seo.text(
-                            text: item.price.toString(),
-                            style: TextTagStyle.h2,
-                            child: Text(
-                              "${item.price}",
-                              semanticsLabel: item.price.toString(),
-                              style: context.text.titleLarge?.copyWith(
-                                fontSize: 40.0,
-                                fontWeight: FontWeight.w900,
-                                color: context.color.onBackground,
-                                height: 1.1,
-                              ),
-                            ),
-                          ),
-
-                          // Display the period
-                          Seo.text(
-                            text: item.type.name,
-                            style: TextTagStyle.h4,
-                            child: Text(
-                              "/${item.type.name}",
-                              semanticsLabel: item.type.name.toString(),
-                              style: context.text.bodyMedium?.copyWith(
-                                color:
-                                    context.color.onBackground.withOpacity(0.5),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                 const SizedBox(height: 40),
 
                   // Display card list
                   Flexible(
@@ -288,7 +233,7 @@ class HomePricing extends StatelessWidget {
                                             textAlign: TextAlign.justify,
                                             style: context.text.bodySmall
                                                 ?.copyWith(
-                                              color: context.color.onBackground,
+                                              color: context.color.onSurface,
                                             ),
                                           ),
                                         ),
@@ -303,22 +248,19 @@ class HomePricing extends StatelessWidget {
                   ),
 
                   // Display Upgrade button
+                  // Display button com link externo
                   Semantics(
-                    label: 'Upgrade Your Plan',
+                    label: index == 0 ? 'Enviar proposta via Google Forms' : 'Visitar Instagram',
                     link: true,
-                    child: Seo.link(
-                      anchor: 'Upgrade',
-                      href: '/dashboard',
-                      child: DButton.text(
-                        onTap: () => context.go('/dashboard'),
-                        color: context.color.primary,
-                        text: 'Upgrade',
-                        style: context.text.bodyMedium?.copyWith(
-                          color: context.color.background,
-                        ),
-                        borderRadius: BorderRadius.circular(Constants.spacing),
-                        margin: const EdgeInsets.only(top: Constants.spacing),
+                    child: DButton.text(
+                      onTap: () => _launchURL(index),
+                      color: context.color.primary,
+                      text: index == 0 ? 'Propostas' : 'Instagram',
+                      style: context.text.bodyMedium?.copyWith(
+                        color: context.color.surface,
                       ),
+                      borderRadius: BorderRadius.circular(Constants.spacing),
+                      margin: const EdgeInsets.only(top: Constants.spacing),
                     ),
                   ),
                 ],

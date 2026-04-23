@@ -41,3 +41,16 @@ class Env {
     navigations.first.id,
   );
 }
+
+// 🟢 Função para abrir o WhatsApp
+Future<void> _launchWhatsApp() async {
+  final uri = Uri.parse('https://wa.me/message/UAV4LRNVKQBBM1');
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication, // Abre no app ou navegador
+    );
+  } else {
+    debugPrint('❌ Não foi possível abrir o WhatsApp');
+  }
+}

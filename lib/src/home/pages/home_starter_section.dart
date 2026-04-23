@@ -148,78 +148,70 @@ class HomeStarter extends StatelessWidget {
           ],
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.all(Constants.spacing),
-        child: Wrap(
-          runSpacing: Constants.spacing * 0.5,
-          spacing: Constants.spacing * 0.5,
-          runAlignment: WrapAlignment.center,
-          alignment: WrapAlignment.center,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          verticalDirection: VerticalDirection.down,
-          children: [
-            // Display email input area
-            Semantics(
-              label: 'Enter Your Email Address to Join the Waitlist',
-              textField: true,
-              child: ExcludeSemantics(
-                excluding: true,
-                child: DTextArea(
-                  isDense: false,
-                  textAlign: TextAlign.start,
-                  cursorColor: context.color.background,
-                  borderRadius: BorderRadius.circular(Constants.spacing * 0.5),
-                  borderSideIdle: BorderSide.none,
-                  backgroundColor: context.color.onBackground.withOpacity(0.5),
-                  hintText: 'Enter Your Email Adress              ',
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: Constants.spacing,
-                  ),
-                  textStyle: context.text.bodySmall?.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: context.color.surface,
-                  ),
-                  hintStyle: context.text.bodySmall?.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: context.color.surface.withOpacity(0.5),
-                  ),
-                  borderSideActive: BorderSide(
-                    color: context.color.background.withOpacity(0.75),
-                  ),
-                  placeholder: DButton.text(
-                    text:
-                        'Enter Your Email Adress                        | Join Waitlist',
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: Constants.spacing,
-                      vertical: Constants.spacing * 0.75,
-                    ),
-                    style: context.text.bodySmall
-                        ?.copyWith(fontWeight: FontWeight.w500),
-                    onTap: () {},
-                  ),
-
-                  // Display "Join Waitlist" button
-                  suffixIcon: DButton.text(
-                    onTap: () => context.go('/dashboard'),
-                    text: 'Join Waitlist',
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: Constants.spacing,
-                      vertical: Constants.spacing * 0.7,
-                    ),
-                    style: context.text.bodyMedium?.copyWith(
-                      color: context.color.primary,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12.0,
-                    ),
-                    borderRadius:
-                        BorderRadius.circular(Constants.spacing * 0.25),
+Padding(
+  padding: const EdgeInsets.all(Constants.spacing),
+  child: SizedBox(
+    // 🎯 Largura condicional: menor no desktop, full no mobile
+    width: context.isDesktop ? 400 : double.infinity,
+    child: Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: Colors.white.withOpacity(0.2),
+          width: 1.5,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.check_circle, color: Colors.greenAccent, size: 24),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  'Junte-se a milhares de técnicos que lutam por um conselho mais próximo!',
+                  style: context.text.bodyMedium?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    height: 1.4,
                   ),
                 ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Row(
+            children: [
+              Icon(Icons.people_outline, color: Colors.white.withOpacity(0.8), size: 18),
+              const SizedBox(width: 10),
+              Text('Faça parte da mudança', style: context.text.bodySmall?.copyWith(color: Colors.white.withOpacity(0.85))),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Icon(Icons.volunteer_activism, color: Colors.white.withOpacity(0.8), size: 18),
+              const SizedBox(width: 10),
+              Text('Sua voz será ouvida', style: context.text.bodySmall?.copyWith(color: Colors.white.withOpacity(0.85))),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Icon(Icons.shield_outlined, color: Colors.white.withOpacity(0.8), size: 18),
+              const SizedBox(width: 10),
+              Text('Defesa dos seus direitos', style: context.text.bodySmall?.copyWith(color: Colors.white.withOpacity(0.85))),
+            ],
+          ),
+        ],
       ),
+    ),
+  ),
+),
     ];
   }
 
@@ -242,7 +234,7 @@ class HomeStarter extends StatelessWidget {
       ],
       child: Transform(
         transform: Matrix4.identity()
-          ..rotateZ(3.14 * 0.15)
+          ..rotateZ(0 * 0)
           ..scale(1.25),
         alignment: Alignment.center,
         child: Semantics(
