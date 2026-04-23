@@ -32,8 +32,8 @@ class NavigationHeader extends AppBar {
                   textSelectionTheme: context.theme.textSelectionTheme.copyWith(
                     selectionColor: selectionColor ??
                         Color.lerp(
-                          context.color.onBackground,
-                          context.color.background,
+                          context.color.onSurface,
+                          context.color.surface,
                           progress,
                         )?.withOpacity(0.25),
                   ),
@@ -41,7 +41,7 @@ class NavigationHeader extends AppBar {
                 child: Container(
                   color: Color.lerp(
                     context.color.primary.withOpacity(progress),
-                    context.color.onBackground,
+                    context.color.onSurface,
                     progress,
                   ),
                   alignment: Alignment.center,
@@ -62,7 +62,7 @@ class NavigationHeader extends AppBar {
                     onTap: () => Scaffold.of(context).openDrawer(),
                     padding: const EdgeInsets.all(Constants.spacing * 0.75),
                     color: Colors.transparent,
-                    child: Icon(Icons.menu, color: context.color.background),
+                    child: Icon(Icons.menu, color: context.color.surface),
                   ),
                 ),
               NavigationHeader.logo(),
@@ -84,7 +84,7 @@ class NavigationHeader extends AppBar {
                                   text: navigation.name,
                                   color: Colors.transparent,
                                   style: context.text.bodyMedium?.copyWith(
-                                    color: context.color.background,
+                                    color: context.color.surface,
                                   ),
                                   onTap: () => Env.controller.onTap(
                                     context,
@@ -97,33 +97,73 @@ class NavigationHeader extends AppBar {
                       ),
                     )
                   : const Spacer(),
-              Theme(
-                data: context.theme,
-                child: Semantics(
-                  label: 'Go to dashboard',
-                  link: true,
-                  child: Seo.link(
-                    anchor: 'Get Started',
-                    href: '/dashboard',
-                    child: DButton.text(
-                      text: 'Get Started',
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16.0, vertical: 8.0),
-                      borderRadius: BorderRadius.circular(20.0),
-                      style: context.text.bodyMedium?.copyWith(
-                        color: context.color.primary,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      onTap: () => context.go('/dashboard'),
-                    ),
-                  ),
+              // 🔗 Botão WhatsApp com ícone
+// 🔗 Botão WhatsApp com fundo branco e bordas arredondadas
+Theme(
+  data: context.theme,
+  child: Semantics(
+    label: 'WhatsApp',
+    link: true,
+    child: Seo.link(
+      anchor: 'Contate-nos pelo Whatsapp',
+      href: 'https://wa.me/message/UAV4LRNVKQBBM1',
+      child: Container(
+        // ⬜ Fundo branco com borda arredondada
+        decoration: BoxDecoration(
+          color: Colors.white, // ← Fundo branco
+          borderRadius: BorderRadius.circular(20.0), // ← Bordas arredondadas
+          border: Border.all(
+            color: Colors.green, // ← Borda verde (opcional, combina com WhatsApp)
+            width: 1.5,
+          ),
+          boxShadow: [
+            // Sombra suave para destacar
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 4,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: DButton(
+          onTap: () async {
+            final uri = Uri.parse('https://wa.me/message/UAV4LRNVKQBBM1');
+            if (await canLaunchUrl(uri)) {
+              await launchUrl(uri, mode: LaunchMode.externalApplication);
+            }
+          },
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          borderRadius: BorderRadius.circular(20.0),
+          color: Colors.transparent, // ← Mantém transparente para herdar o Container
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // Ícone do WhatsApp
+              Icon(
+                Icons.chat_rounded,
+                color: Colors.green,
+                size: 18,
+              ),
+              const SizedBox(width: 6),
+              // Texto do botão
+              Text(
+                'Whatsapp',
+                style: context.text.bodyMedium?.copyWith(
+                  color: Colors.green,
+                  fontWeight: FontWeight.w600,
                 ),
-              )
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+  ),
+),
             ]),
           );
         }),
       );
-
   static Widget logo() {
     return Builder(builder: (context) {
       return Seo.text(
@@ -131,9 +171,9 @@ class NavigationHeader extends AppBar {
         style: TextTagStyle.h1,
         child: Text(
           // Your logo
-          '🎉  FLUTTER', semanticsLabel: 'Flutter Landing Page Logo',
+          'Eleições CFT/CRT 2026', semanticsLabel: 'Flutter Landing Page Logo',
           style: context.text.titleLarge?.copyWith(
-            color: context.color.background,
+            color: context.color.surface,
             fontWeight: FontWeight.w900,
             fontSize: 20.0,
           ),

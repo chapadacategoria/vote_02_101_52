@@ -8,11 +8,11 @@ class NavigationFooter extends StatelessWidget {
     return Theme(
       data: context.theme.copyWith(
         textSelectionTheme: TextSelectionThemeData(
-          selectionColor: context.color.background.withOpacity(0.15),
+          selectionColor: context.color.surface.withOpacity(0.15),
         ),
       ),
       child: Container(
-        color: context.color.onBackground,
+        color: context.color.onSurface,
         padding: const EdgeInsets.all(Constants.spacing),
         constraints: BoxConstraints(minWidth: context.width),
         child: Wrap(
@@ -30,14 +30,14 @@ class NavigationFooter extends StatelessWidget {
                 children: [
                   // Term of Service Button
                   Semantics(
-                    label: 'Unidentified Route',
+                    label: 'Eleições CFT/CRT 2026',
                     link: true,
                     child: Seo.link(
-                      anchor: 'Term of Service',
-                      href: '/term_of_service.txt',
+                      anchor: 'Eleições CFT/CRT 2026',
+                      href: 'https://eleicoes.sinceti.tec.br/',
                       child: DButton.text(
-                        onTap: () => context.go('/term_of_service.txt'),
-                        text: 'Term of Service',
+                        onTap: () => launchUrl(Uri.parse('https://eleicoes.sinceti.tec.br/')),
+                        text: 'Eleições CFT/CRT 2026',
                         style: context.text.bodyMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                           color: context.color.primary,
@@ -56,8 +56,8 @@ class NavigationFooter extends StatelessWidget {
                       href: 'https://www.buymeacoffee.com/nialixus',
                       child: DButton.text(
                         onTap: () => launchUrl(
-                            Uri.parse('https://www.buymeacoffee.com/nialixus')),
-                        text: 'Privacy Policy',
+                            Uri.parse('https://servicos.sinceti.net.br/index.php')),
+                        text: 'Sinceti',
                         style: context.text.bodyMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                           color: context.color.primary,
@@ -76,30 +76,8 @@ class NavigationFooter extends StatelessWidget {
                       href: 'mailto://nialixus@gmail.com',
                       child: DButton.text(
                         onTap: () =>
-                            launchUrl(Uri.parse('mailto://nialixus@gmail.com')),
-                        text: 'Contact Us',
-                        style: context.text.bodyMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: context.color.primary,
-                        ),
-                        color: Colors.transparent,
-                      ),
-                    ),
-                  ),
-
-                  // Blog Button
-                  Semantics(
-                    label: 'Github Repository',
-                    link: true,
-                    child: Seo.link(
-                      anchor: 'Blog',
-                      href: 'https://github.com/Nialixus/flutter_landing_page',
-                      child: DButton.text(
-                        onTap: () => launchUrl(
-                          Uri.parse('https://github.com/'
-                              'Nialixus/flutter_landing_page'),
-                        ),
-                        text: 'Blog',
+                            launchUrl(Uri.parse('https://wa.me/message/UAV4LRNVKQBBM1')),
+                        text: 'Whatsapp',
                         style: context.text.bodyMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                           color: context.color.primary,
@@ -116,14 +94,14 @@ class NavigationFooter extends StatelessWidget {
             Semantics(
               label: 'Copyright 2023 Louis Wiwawan',
               child: Seo.link(
-                anchor: '© 2023 Louis Wiwawan',
+                anchor: '© 2026 Chapa 52 e 101 - Todos os direitos reservados',
                 href: 'https://github.com/Nialixus/'
                     'flutter_landing_page/blob/main/LICENSE',
                 child: DButton.text(
                   mainAxisSize: MainAxisSize.min,
-                  text: "© 2023 Louis Wiwawan",
+                  text: "© 2026 Chapa 52 e 101 - Todos os direitos reservados",
                   style: context.text.bodyMedium?.copyWith(
-                    color: context.color.background.withOpacity(0.25),
+                    color: context.color.surface.withOpacity(0.25),
                     fontWeight: FontWeight.w400,
                     fontSize: 11.0,
                   ),

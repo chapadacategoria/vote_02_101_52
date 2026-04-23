@@ -110,7 +110,7 @@ class HomeFeatures extends StatelessWidget {
                   control: SwiperControl(
                     iconNext: Icons.navigate_next_rounded,
                     iconPrevious: Icons.navigate_before_rounded,
-                    color: context.color.background,
+                    color: context.color.surface,
                   ),
                 ),
               ),
@@ -184,80 +184,111 @@ class HomeFeatures extends StatelessWidget {
     );
   }
 
-  static Widget card({required CardModel item}) {
-    return Builder(
-      builder: (context) {
-        return Container(
-          width: 300.0,
-          height: 250.0,
-          padding: const EdgeInsets.all(Constants.spacing),
-          decoration: BoxDecoration(
-            color: context.color.surface,
-            borderRadius: BorderRadius.circular(Constants.spacing * 0.5),
-            boxShadow: [
-              BoxShadow(
-                color: context.color.onBackground.withOpacity(0.1),
-                blurRadius: 10.0,
+static Widget card({required CardModel item}) {
+  return Builder(
+    builder: (context) {
+      return Container(
+        width: 250.0,
+        height: 350.0,
+        padding: const EdgeInsets.all(Constants.spacing),
+        decoration: BoxDecoration(
+          color: context.color.surface,
+          borderRadius: BorderRadius.circular(Constants.spacing * 0.5),
+          boxShadow: [
+            BoxShadow(
+              color: context.color.onSurface.withOpacity(0.1),
+              blurRadius: 10.0,
+            ),
+          ],
+        ),
+        child: MergeSemantics(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              // 👤 FOTO DO CANDIDATO (VERSÃO CORRIGIDA)
+              Container(
+                width: 120.0,
+                height: 120.0,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: context.color.primary,
+                    width: 3.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      blurRadius: 8.0,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: ClipOval(
+                  child: Image(
+                    image: AssetImage(
+                      item.source.startsWith('assets/') 
+                          ? item.source 
+                          : 'assets/$item.source',
+                    ),
+                    fit: BoxFit.cover,
+                    // Fallback se imagem não carregar
+                    errorBuilder: (context, error, stackTrace) {
+                      return Container(
+                        color: context.color.surfaceVariant,
+                        child: Icon(
+                          Icons.person,
+                          size: 60,
+                          color: context.color.onSurface.withOpacity(0.5),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+
+              // Add spacing between image and title
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: Constants.spacing * 0.75,
+                  bottom: Constants.spacing * 0.5,
+                ),
+                child: Seo.text(
+                  text: item.title,
+                  style: TextTagStyle.h4,
+                  child: Text(
+                    item.title,
+                    semanticsLabel: item.title,
+                    style: context.text.bodyMedium?.copyWith(
+                      color: context.color.primary,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+
+              // Display item subtitle
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Seo.text(
+                    text: item.subtitle,
+                    style: TextTagStyle.p,
+                    child: Text(
+                      item.subtitle,
+                      semanticsLabel: item.subtitle,
+                      textAlign: TextAlign.center,
+                      style: context.text.bodySmall
+                          ?.copyWith(color: Colors.grey.shade700),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
-          child: MergeSemantics(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Display item image
-                Semantics(
-                  image: true,
-                  label: '${item.title} Icon',
-                  child: Seo.image(
-                    alt: '${item.title} Icon',
-                    src: 'assets/${item.source}',
-                    child: DImage(
-                      source: item.source,
-                      size: const Size.square(Constants.spacing * 1.5),
-                      color: context.color.primary,
-                    ),
-                  ),
-                ),
-
-                // Add spacing between image and title
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: Constants.spacing * 0.5,
-                    bottom: Constants.spacing,
-                  ),
-                  child: Seo.text(
-                    text: item.title,
-                    style: TextTagStyle.h4,
-                    child: Text(
-                      item.title,
-                      semanticsLabel: item.title,
-                      style: context.text.bodyMedium?.copyWith(
-                        color: context.color.primary,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-
-                // Display item subtitle
-                Seo.text(
-                  text: item.subtitle,
-                  style: TextTagStyle.p,
-                  child: Text(
-                    item.subtitle,
-                    semanticsLabel: item.subtitle,
-                    textAlign: TextAlign.justify,
-                    style: context.text.bodySmall
-                        ?.copyWith(color: Colors.grey.shade700),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
+        ),
+      );
+    },
+  );
+}
 }
