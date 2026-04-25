@@ -12,7 +12,7 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <base href="./">
+  <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -21,8 +21,8 @@
   <meta name="description" content="A responsive landing page template for flutter. Perfect for showcasing your product or service with a clean lead-in, FAQs, pricing, and key features.">
   <meta name="keywords" content="Flutter, Landing Page, Responsive, Multi-Platform, Template, Flutter Landing Page, Flutter Template">
   <meta name="author" content="Louis Wiwawan">
-  <meta property="og:title" content="A chapa da categoria.">
-  <meta property="og:description" content="Vote 01 101 52 Pelo Pará, Pelo Amapá e pelo CRT 07.">
+  <meta property="og:title" content="Flutter Landing Page">
+  <meta property="og:description" content="A responsive landing page template for flutter. Perfect for showcasing your product or service with a clean lead-in, FAQs, pricing, and key features.">
   <meta property="og:image" content="https://user-images.githubusercontent.com/45191605/282370539-0cd5e94c-1a31-447a-b7c4-fdba6a58f0f9.png">
   <meta property="og:url" content="https://nialixus-landing-page.web.app/">
   <meta name="twitter:card" content="summary_large_image">
@@ -70,14 +70,14 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <!--<link rel="icon" type="image/png" href="favicon.png">-->
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <title>Flutter Landing Page</title>
-  <!--<link rel="manifest" href="manifest.json">-->
+  <link rel="manifest" href="manifest.json">
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "3542804037" /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */;
+    const serviceWorkerVersion = "918199869" /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */;
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer=""></script>
@@ -90,9 +90,9 @@
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
+        //serviceWorker: {
+          //serviceWorkerVersion: serviceWorkerVersion,
+        //},
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
             appRunner.runApp();
