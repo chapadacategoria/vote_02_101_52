@@ -120,7 +120,7 @@ class HomePage extends StatelessWidget {
             id: item.id,
             title: "A Chapa da categoria Vote 52 Vote 101",
             subtitle:
-                "Somos técnicos atuantes há décadas e com muita luta\nconseguimos a criação do CRT-07(PA/AP)\n garantindo autonomia para nossa região.\nVOTE 5️⃣2️⃣💪🏽VOTE 1️⃣0️⃣1️⃣💪🏽",
+                "Somos técnicos atuantes há décadas e com muita luta conseguimos a criação do CRT-07(PA/AP) garantindo autonomia para nossa região.VOTE 02, VOTE 101, VOTE 52 PARA CONTINUAR ESSA LUTA! ",
           ),
 
           // HomeFeatures Section: Key Features
@@ -131,34 +131,44 @@ class HomePage extends StatelessWidget {
                 'Conheça os candidatos que estão concorrendo a diretoria executiva CRT-07 e o conselheiro federal pelo Pará.',
             cards: const [
               CardModel(
+                source: 'assets/image/vicente_carneiro.png', // ← Foto do Abelardo
+                title: 'Presidente do CFT Chapa 02: Vicente Carneiro',
+                subtitle: 'Técnico, Engenheiro, CEO do Grupo EGF e Secretário de Políticas Energéticas, com sólida experiência offshore e vivência prática na profissão. Propõe um novo CFT com Caixa de Assistência e Proteção ao Técnico e defesa intransigente das atribuições da categoria.',
+              ),
+              CardModel(
+                source: 'assets/image/abelardo_lopes_de_sousa.png', // ← Foto do Abelardo
+                title: 'Conselheiro Federal Chapa 101: Abelardo Lopes De Sousa',
+                subtitle: 'Arquiteto do desmembramento da Região Norte e criação do CRT-07. Defende a valorização dos técnicos industriais e a autonomia do conselho para melhor atender a categoria.',
+              ),
+              CardModel(
+                source: 'assets/image/jose_ignacio.png', // ← Foto do Abelardo
+                title: 'Conselheiro Federal Suplente Chapa 101: José Ignacio  ',
+                subtitle: 'Técnico em Telecomunicações com mais de 40 anos de experiência em TELEX, Comunicação de Dados e Backbone. Especialista em infraestrutura crítica, defende a confiabilidade e à continuidade dos serviços como base da conectividade nacional.',
+              ),
+              CardModel(
                 source: 'assets/image/ana-paula-fonseca.png',
-                title: "Presidente: Ana Paula Fonseca",
+                title: "Presidente do CRT 07 Chapa 52: Ana Paula Fonseca",
                 subtitle: 'Técnica em Telecomunicações pelo IFPA com mais de 25 anos de experiência nos setores público e privado. Como agente de fiscalização concursada, defende uma fiscalização orientadora em vez de punitiva.',
               ),
               CardModel(
-                source: 'assets/image/jefferson_oliveira.png', // ← Foto do Jefferson
-                title: 'Vice-Presidente: Jefferson Oliveira',
+                source: 'assets/image/jefferson_costa.png', // ← Foto do Jefferson
+                title: 'Vice-Presidente do CRT 07 Chapa 52: Jefferson Costa',
                 subtitle: 'Técnico em Eletrônica e especialista em energia solar. Com experiência na Embratel e ETEMB, defende a qualificação e o registro profissional para valorização e segurança da categoria.',
               ),
               CardModel(
                 source: 'assets/image/francisco_silva_santos.png', // ← Foto do Francisco
-                title: 'Diretor Administrativo: Francisco Silva Santos',
+                title: 'Diretor Administrativo do CRT 07 Chapa 52: Francisco Silva Santos',
                 subtitle: 'Técnico em Edificações (IFPA/1975), participou de obras como Mangueirão e Marco Zero. Atua na defesa do reconhecimento dos técnicos industriais no Norte.',
               ),
               CardModel(
                 source: 'assets/image/arivaldo_lieuthier.png', // ← Foto do Arivaldo
-                title: 'Diretor Financeiro: Arivaldo Lieuthier',
+                title: 'Diretor Financeiro do CRT 07 Chapa 52: Arivaldo Lieuthier',
                 subtitle: 'Técnico em Telecomunicações desde 1978. Paraense, articulou a separação da Região Norte e lutou contra a privatização da Telebrás, defendendo o fortalecimento da categoria há décadas.',
               ),
               CardModel(
                 source: 'assets/image/jose_maria_melo.png', // ← Foto do José Maria
-                title: 'Diretor de Fiscalização e normas: José Maria Melo',
+                title: 'Diretor de Fiscalização e normas do CRT 07 Chapa 52 : José Maria Melo',
                 subtitle: 'Técnico com 34 anos de experiência em eletrônica e telecomunicações (Amazônia/Chile). Agente do CRT-02, foca em fiscalização orientadora e valorização da categoria.',
-              ),
-              CardModel(
-                source: 'assets/image/abelardo_lopes_de_sousa.png', // ← Foto do Abelardo
-                title: 'Conselheiro Federal: Abelardo Lopes De Sousa',
-                subtitle: 'Arquiteto do desmembramento da Região Norte e criação do CRT-07. Defende a valorização dos técnicos industriais e a autonomia do conselho para melhor atender a categoria.',
               ),
             ],
           ),
