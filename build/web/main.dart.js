@@ -25732,7 +25732,7 @@ aI0(a,b,c){return new A.cs(new A.abL(a,c,b),null)},
 aI_(a){return new A.cs(new A.abK(a),null)},
 aTT(){return new A.tP($.fq(),new A.abO(),new A.cs(new A.abP(),null),null,t.x_)},
 aTU(a,b){var s=null,r=b.a
-return new A.tg(r,[new A.OQ("A Chapa da categoria Vote 52 Vote 101","Somos t\xe9cnicos atuantes h\xe1 d\xe9cadas e com muita luta conseguimos a cria\xe7\xe3o do CRT-07(PA/AP) garantindo autonomia para nossa regi\xe3o.VOTE 02, VOTE 101, VOTE 52 PARA CONTINUAR ESSA LUTA! ",s),new A.OM(r,"Os Candidatos","Conhe\xe7a os candidatos que est\xe3o concorrendo a diretoria executiva CRT-07 e o conselheiro federal pelo Par\xe1.",B.Me,s),new A.OO(r,"Queremos te escutar","Sua proposta virou nosso compromisso, aponte o rumo e desenhe a solu\xe7\xe3o.",B.Mg,s),new A.OL(r," PROPOSTAS QUE J\xc1 EST\xc3O NO PLANO. FEITAS POR QUEM VIVE A PROFISS\xc3O.","Juntos, vamos escrever o pr\xf3ximo cap\xedtulo da nossa categoria.",B.Ll,s)][a])},
+return new A.tg(r,[new A.OQ("A Chapa da autonomia Vote 02 Vote 101 Vote 52","T\xe9cnicos com d\xe9cadas de luta criaram o CRT-07 (PA/AP). Autonomia! Vote 02, 101, 52 ",s),new A.OM(r,"Os Candidatos","Conhe\xe7a os candidatos que est\xe3o concorrendo a diretoria executiva CRT-07 e o conselheiro federal pelo Par\xe1.",B.Me,s),new A.OO(r,"Queremos te escutar","Sua proposta virou nosso compromisso, aponte o rumo e desenhe a solu\xe7\xe3o.",B.Mg,s),new A.OL(r," PROPOSTAS QUE J\xc1 EST\xc3O NO PLANO. FEITAS POR QUEM VIVE A PROFISS\xc3O.","Juntos, vamos escrever o pr\xf3ximo cap\xedtulo da nossa categoria.",B.Ll,s)][a])},
 aI1(a,b,c){return new A.cs(new A.abU(a,c,b),null)},
 aTV(a,b){return new A.cs(new A.abT(a,b),null)},
 aI2(a,b,c){var s,r,q,p,o,n,m,l,k,j=null,i=A.W(a).ok.r,h=t.p

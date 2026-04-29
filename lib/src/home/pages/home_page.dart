@@ -118,9 +118,9 @@ class HomePage extends StatelessWidget {
           // HomeStarter Section: Introduction
           HomeStarter(
             id: item.id,
-            title: "A Chapa da categoria Vote 52 Vote 101",
+            title: "A Chapa da autonomia Vote 02 Vote 101 Vote 52",
             subtitle:
-                "Somos técnicos atuantes há décadas e com muita luta conseguimos a criação do CRT-07(PA/AP) garantindo autonomia para nossa região.VOTE 02, VOTE 101, VOTE 52 PARA CONTINUAR ESSA LUTA! ",
+                "Técnicos com décadas de luta criaram o CRT-07 (PA/AP). Autonomia! Vote 02, 101, 52 ",
           ),
 
           // HomeFeatures Section: Key Features
