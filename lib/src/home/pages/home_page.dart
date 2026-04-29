@@ -180,7 +180,7 @@ class HomePage extends StatelessWidget {
             subtitle:
                 'Sua proposta virou nosso compromisso, aponte o rumo e desenhe a solução.',
             plans: const [
-              // HomePricingModel items representing pricing plans
+              // HomePricingModel items representing pricing pladns
               HomePricingModel(
                 title: 'Digite sua proposta',
                 price: 0,
