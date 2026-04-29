@@ -192,7 +192,7 @@ class HomePage extends StatelessWidget {
                 title: 'Visite nosso instagram',
                 price: 15,
                 benefits:
-                    "Conheça nossa equipe.\nVeja nossa história.\nSinta a nossa paixão pela categoria.",
+                    "Conheça nossa equipe.\nVeja nossa história.\nVeja a nossa paixão pela categoria.",
                 type: HomePricingType.month,
               ),
             ],
